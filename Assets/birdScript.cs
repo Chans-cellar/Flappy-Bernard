@@ -25,7 +25,12 @@ public class birdScript : MonoBehaviour
         {
             myRigidBody.velocity = Vector2.up * flapStrength ;
         }
-        
+
+        if (birdIsAlive && transform.position.y < -15)
+        {
+            logic.gameOver();
+            birdIsAlive = false;
+        }
         
     }
 
